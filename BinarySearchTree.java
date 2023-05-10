@@ -105,6 +105,8 @@ class BinarySearchTree {
         }
         Node prev = null;
         Node temp = root;
+        
+        // We traverse the tree until we find a leave
         while (temp != null) {
             if (temp.key > key) {
                 prev = temp;
@@ -188,25 +190,23 @@ class BinarySearchTree {
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
 
-//        tree.insert(50);
-//        tree.insert(30);
-//        tree.insert(20);
-//        tree.insert(40);
-//        tree.insert(70);
-//        tree.insert(60);
-//        tree.insert(80);
+       tree.insert(50);
+       tree.insert(30);
+       tree.insert(20);
+       tree.insert(40);
+       tree.insert(70);
+       tree.insert(60);
+       tree.insert(80);
+
 // 8, 3,  1, 6, 4, 7, 10, 14, 13
-
-// Translate to a Python code the progrm from this point to the end of the file
-
-        tree.insert(3);
-        tree.insert(1);
-        tree.insert(6);
-        tree.insert(4);
-        tree.insert(7);
-        tree.insert(10);
-        tree.insert(14);
-        tree.insert(13);
+        // tree.insert(3);
+        // tree.insert(1);
+        // tree.insert(6);
+        // tree.insert(4);
+        // tree.insert(7);
+        // tree.insert(10);
+        // tree.insert(14);
+        // tree.insert(13);
         // print inorder traversal of the BST
         // System.out.println("The inorder traversal with stack of BST is...");
         // tree.inorderWithStack();
@@ -233,8 +233,8 @@ class BinarySearchTree {
             System.out.println(placeInTree.key + " is found in BST");
         }
 
-        // System.out.println("The preorder traversal of BST is...");
-        // tree.preorderRec(root);
+        System.out.println("The preorder traversal of BST is...");
+        tree.preorderRec(root);
 
         // System.out.println("\nThe postorder traversal of BST is...");
         // tree.postorderRec(root);
