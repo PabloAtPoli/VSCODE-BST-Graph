@@ -253,13 +253,17 @@ class BinarySearchTree {
             System.out.println(10 + " is not found in BST");
         } else {
             System.out.println(placeInTree.key + " is found in BST");
-        }
+        }        
+        
+        
+        System.out.println("The inorder traversal of BST is...");
+        tree.inorder();
 
-        System.out.println("The preorder traversal of BST is...");
+        System.out.println("\nThe preorder traversal of BST is...");
         tree.preorderRec(root);
 
-        // System.out.println("\nThe postorder traversal of BST is...");
-        // tree.postorderRec(root);
+        System.out.println("\nThe postorder traversal of BST is...");
+        tree.postorderRec(root);
 
         // System.out.println("\nThe by level traverse of BST is...");
         // tree.TraverseByLevel(root);
