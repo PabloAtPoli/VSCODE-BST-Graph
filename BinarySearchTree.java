@@ -96,8 +96,22 @@ class BinarySearchTree {
         return search(root.left, key);
     }
 
+    
+
+    public static Node searchIterative(Node root, int key) {
+        while (root != null) {
+            if (root.key == key) {
+                return root;
+            } else if (root.key < key) {
+                root = root.right;
+            } else {
+                root = root.left;
+            }
+        }
+        return null;
+    }
+
     public void insertIterative(int key) {
-        // A new key is inserted as a leave
         Node node = new Node(key);
         if (root == null) {
             root = node;
@@ -105,8 +119,7 @@ class BinarySearchTree {
         }
         Node prev = null;
         Node temp = root;
-        
-        // We traverse the tree until we find a leave
+        // Find the node that will be the parent of the new key
         while (temp != null) {
             if (temp.key > key) {
                 prev = temp;
@@ -116,6 +129,7 @@ class BinarySearchTree {
                 temp = temp.right;
             }
         }
+        // Insert the new key in a leaf
         if (prev.key > key) {
             prev.left = node;
         } else {
@@ -217,6 +231,14 @@ class BinarySearchTree {
             System.out.println("\n" + 70 + " is not found in BST");
         } else {
             System.out.println(placeInTree.key + " is found in BST");
+        }
+
+        placeInTree = BinarySearchTree.search(root, 70);
+
+        if (placeInTree == null) {
+            System.out.println("\n" + 70 + " is not found in BST using iterative search");
+        } else {
+            System.out.println(placeInTree.key + " is found in BST using iterative search");
         }
 
         placeInTree = BinarySearchTree.search(root, 25);
