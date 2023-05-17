@@ -171,30 +171,30 @@ class BinarySearchTree {
     }
 
     void TraverseByLevelShowingLevels(Node root) {
-        LinkedList<Node> queue = new LinkedList<>();
+        LinkedList<Node> queueKey = new LinkedList<>();
         LinkedList<Integer> queueLevel = new LinkedList<>();
 
-        int actualLevel = 0;
+        int currentLevel = 0;
 
         if (root != null) {
-            queue.add(root);
+            queueKey.add(root);
             queueLevel.add(1);
         }
-        while (!queue.isEmpty()) {
-            Node n = queue.remove();
+        while (!queueKey.isEmpty()) {
+            Node n = queueKey.remove();
             int level = queueLevel.remove();
 
-            if (level > actualLevel) {
-                actualLevel = level;
-                System.out.print("\nLevel " + actualLevel+ ":");
+            if (level > currentLevel) {
+                currentLevel = level;
+                System.out.print("\nLevel " + currentLevel+ ":");
             }
             System.out.print(n.key + " ");
             if (n.left != null) {
-                queue.add(n.left);
+                queueKey.add(n.left);
                 queueLevel.add(level + 1);
             }
             if (n.right != null) {
-                queue.add(n.right);
+                queueKey.add(n.right);
                 queueLevel.add(level + 1);
             }
         }
@@ -222,54 +222,56 @@ class BinarySearchTree {
         // tree.insert(14);
         // tree.insert(13);
         // print inorder traversal of the BST
-        // System.out.println("The inorder traversal with stack of BST is...");
-        // tree.inorderWithStack();
 
-        Node placeInTree = BinarySearchTree.search(root, 70);
 
-        if (placeInTree == null) {
-            System.out.println("\n" + 70 + " is not found in BST");
-        } else {
-            System.out.println(placeInTree.key + " is found in BST");
-        }
+        // Node placeInTree = BinarySearchTree.search(root, 70);
 
-        placeInTree = BinarySearchTree.search(root, 70);
+        // if (placeInTree == null) {
+        //     System.out.println("\n" + 70 + " is not found in BST");
+        // } else {
+        //     System.out.println(placeInTree.key + " is found in BST");
+        // }
 
-        if (placeInTree == null) {
-            System.out.println("\n" + 70 + " is not found in BST using iterative search");
-        } else {
-            System.out.println(placeInTree.key + " is found in BST using iterative search");
-        }
+        // placeInTree = BinarySearchTree.search(root, 70);
 
-        placeInTree = BinarySearchTree.search(root, 25);
-        if (placeInTree == null) {
-            System.out.println(25 + " is not found in BST");
-        } else {
-            System.out.println(placeInTree.key + " is found in BST");
-        }
+        // if (placeInTree == null) {
+        //     System.out.println("\n" + 70 + " is not found in BST using iterative search");
+        // } else {
+        //     System.out.println(placeInTree.key + " is found in BST using iterative search");
+        // }
 
-        placeInTree = BinarySearchTree.search(root, 10);
-        if (placeInTree == null) {
-            System.out.println(10 + " is not found in BST");
-        } else {
-            System.out.println(placeInTree.key + " is found in BST");
-        }        
+        // placeInTree = BinarySearchTree.search(root, 25);
+        // if (placeInTree == null) {
+        //     System.out.println(25 + " is not found in BST");
+        // } else {
+        //     System.out.println(placeInTree.key + " is found in BST");
+        // }
+
+        // placeInTree = BinarySearchTree.search(root, 10);
+        // if (placeInTree == null) {
+        //     System.out.println(10 + " is not found in BST");
+        // } else {
+        //     System.out.println(placeInTree.key + " is found in BST");
+        // }        
         
         
-        System.out.println("The inorder traversal of BST is...");
+        System.out.println("The inorder recursive traversal of BST is...");
         tree.inorder();
 
-        System.out.println("\nThe preorder traversal of BST is...");
-        tree.preorderRec(root);
+        System.out.println("\nThe inorder traversal with stack of BST is...");
+        tree.inorderWithStack();
 
-        System.out.println("\nThe postorder traversal of BST is...");
-        tree.postorderRec(root);
+        // System.out.println("\nThe preorder traversal of BST is...");
+        // tree.preorderRec(root);
 
-        // System.out.println("\nThe by level traverse of BST is...");
-        // tree.TraverseByLevel(root);
+        // System.out.println("\nThe postorder traversal of BST is...");
+        // tree.postorderRec(root);
 
-        // System.out.println("\nThe by level traverse showing levels of BST is...");
-        // tree.TraverseByLevelShowingLevels(root);
+        System.out.println("\nThe by level traverse of BST is...");
+        tree.TraverseByLevel(root);
+
+        System.out.println("\nThe by level traverse showing levels of BST is...");
+        tree.TraverseByLevelShowingLevels(root);
 
     }
 }
