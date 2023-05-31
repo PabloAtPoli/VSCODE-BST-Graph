@@ -24,7 +24,7 @@ public class HashMapGraphDriver {
         graph.countVertices();
 
         //counts the number of edges in the graph   
-        graph.countEdges(true);
+        graph.countEdges();
 
         //checks whether an edge is present or not between the two specified vertices  
         graph.containsEdge(3, 4);
@@ -34,7 +34,7 @@ public class HashMapGraphDriver {
         graph.containsVertex(3);
         graph.containsVertex(5);
 
-        System.out.println("Graph with String vertices...");
+        System.out.println("\nGraph with String vertices...");
         
         HashMapGraph<String> graphTwo = new HashMapGraph<String>();
         graphTwo.addNewEdge("Bill", "Elon", true);

@@ -34,16 +34,14 @@ class HashMapGraph<T> {
     }
 //the method counts the number of edges  
 
-    public void countEdges(boolean isUnDirectedGraph) {
+    public void countEdges() {
     //variable to store number of edges 
     // This method works for an undirected graph 
         int count = 0;
         for (T v : map.keySet()) {
             count = count + map.get(v).size();
         }
-        if (isUnDirectedGraph == true) {
-            count = count / 2;
-        }
+
         System.out.println("Total number of edges: " + count);
     }
 //checks a graph has vertex or not  
