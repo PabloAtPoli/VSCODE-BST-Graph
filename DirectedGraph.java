@@ -6,11 +6,11 @@ public class DirectedGraph {
     //note that we have created an adjacency list (i.e. List of List)      
 
     List<List<Integer>> adjList = new ArrayList<>();
-    //creating a constructor of the class Graph that construct a graph  
 
+    //creating a constructor of the class Graph that construct a graph  
     public DirectedGraph(List<Edge> edges) {
         int n = 0;
-        //foreach loop that iterates over the edge  
+        //foreach loop that iterates over the edges 
         for (Edge e : edges) {
             //determines the maximum numbered vertex      
             n = Integer.max(n, Integer.max(e.s, e.d));

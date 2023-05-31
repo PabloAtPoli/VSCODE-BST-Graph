@@ -1,4 +1,4 @@
-//Creating a class named Edge that stores the edges of the graph  
+//Creating a class named Edge that stores an edges of the graph  
 
 class Edge {
 //the variable source and destination represent the vertices       
