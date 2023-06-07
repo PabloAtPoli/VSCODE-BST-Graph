@@ -4,16 +4,16 @@ import java.util.LinkedList;
 
 public class ArrayOfListGraph {
     //stores the number of vertices   
-
     private int vertices;
+
     //creates a linked list for the adjacency list of the graph   
-
     private LinkedList<Integer>[] adjList;
-    //creating a constructor of the Graph class   
 
+    //creating a constructor of the Graph class   
     ArrayOfListGraph(int count_v) {
         //assigning the number of vertices to the passed parameter  
         vertices = count_v;
+        
         adjList = new LinkedList[count_v];
 
         //loop for creating the adjacency lists  
@@ -60,19 +60,19 @@ public class ArrayOfListGraph {
         boolean[] visitedNode = new boolean[vertices];
 
         //creating another list for storing the visited node  
-        LinkedList<Integer> vNodeList = new LinkedList<Integer>();
+        LinkedList<Integer> vertexQueue = new LinkedList<Integer>();
 
         //if current node (root node) is visited, add it to the vNodeList   
         visitedNode[rnode] = true;
 
         //inserts the visited node into vNodeList  
-        vNodeList.add(rnode);
+        vertexQueue.add(rnode);
 
         //the while loop executes until we have visited all the nodes  
-        while (vNodeList.size() != 0) {
+        while (vertexQueue.size() != 0) {
             //deque an entry from queue and process it    
             //the poll() method retrieves and removes the head (first element) of this list  
-            rnode = vNodeList.poll();
+            rnode = vertexQueue.poll();
             System.out.print(rnode + " ");
 
             //detrmines the negihboring nodes of the current node  
@@ -87,7 +87,7 @@ public class ArrayOfListGraph {
                     //if the above if-statement returns true, visits the node   
                     visitedNode[n] = true;
                     //adds the visited node in the vNodeList  
-                    vNodeList.add(n);
+                    vertexQueue.add(n);
                 }
             }
         }
